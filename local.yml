@@ -8,5 +8,7 @@
   tasks:
   - name: neovim & vimplug
     include: playbooks/neovim.yml
+  - name: oh-my-zsh
+    include: playbooks/oh-my-zsh.yml
   - name: .dotfiles
     include: playbooks/configs.yml

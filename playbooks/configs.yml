@@ -1,6 +1,12 @@
+  - name: register if .dotfiles exists
+    stat:
+      path: "/home/{{ USER }}/.dotfiles"
+    register: dotfiles
+
   - name: clone .dotfiles
     git:
       repo: "git@github.com:shaun-moate/.dotfiles.git"
       dest: "/home/{{ USER }}/.dotfiles"
       accept_hostkey: yes
     become: no
+    when: dotfiles.stat.exists == False
