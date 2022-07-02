@@ -1,0 +1,2 @@
+ - clean up bash* config files
+ - re-factor to best practice
