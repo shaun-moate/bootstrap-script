@@ -1,0 +1,3 @@
+ - name: install fonts
+   pacman:
+     name: ['ttf-dejavu']

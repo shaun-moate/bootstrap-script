@@ -3,8 +3,11 @@
    pacman:
      name: ['zsh']
 
- - name: change shell to zsh
-   shell: "chsh -s $(which zsh) {{ USER }}"
+ - name: ensure USER has zsh shell
+   user:
+     name: "{{ USER }}"
+     shell: /bin/zsh
+     state: present
 
  - name: check for oh-my-zsh
    stat:

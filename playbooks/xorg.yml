@@ -1,0 +1,3 @@
+ - name: install x-org
+   pacman:
+     name: ['xorg-server', 'xorg-xinit']

@@ -1,5 +1,61 @@
 ---
-- hosts: localhost
+- name: Set-up graphical server (xorg)
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
+  - name: alacritty
+    include: playbooks/xorg.yml
+
+- name: Set-up fonts
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
+  - name: fonts
+    include: playbooks/fonts.yml
+
+- name: Set up window manager (i3)
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
+  - name: i3
+    include: playbooks/i3.yml
+
+- name: Set-up terminal emulator (alacritty)
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
+  - name: alacritty
+    include: playbooks/alacritty.yml
+
+- name: Set-up shell (oh-my-zsh)
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
+  - name: oh-my-zsh
+    include: playbooks/oh-my-zsh.yml
+
+- name: Set-up text editor (neovim)
+  hosts: localhost
   connection: local
   become: true
   vars:
@@ -8,7 +64,15 @@
   tasks:
   - name: neovim & vimplug
     include: playbooks/neovim.yml
-  - name: oh-my-zsh
-    include: playbooks/oh-my-zsh.yml
+
+
+- name: Set-up configurations (.dotfiles)
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
   - name: .dotfiles
     include: playbooks/configs.yml
