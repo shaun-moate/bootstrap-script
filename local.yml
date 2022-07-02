@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  vars:
+    USER: smoate
+
+  tasks:
+  - name: neovim & vimplug
+    include: playbooks/neovim.yml
+  - name: .dotfiles
+    include: playbooks/configs.yml
