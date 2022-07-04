@@ -1,0 +1,13 @@
+---
+- name: Shaun's Auto-Ricing Script (SARS)
+  hosts: localhost
+  connection: local
+  vars:
+    user: smoate
+
+
+  roles:
+    - role: core-setup
+    - role: install-shell
+    - role: install-zettel
+      

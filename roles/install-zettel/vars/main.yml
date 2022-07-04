@@ -1,0 +1,3 @@
+---
+zetteldir: '/home/{{ user }}/zettelkasten'
+zettelrepo: 'git@github.com:shaun-moate/zettelkasten.git' 

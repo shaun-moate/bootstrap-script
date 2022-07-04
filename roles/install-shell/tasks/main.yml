@@ -1,0 +1,28 @@
+---
+ - name: set zsh as default shell
+   user:
+     name: '{{ user }}'
+     shell: /bin/zsh
+     state: present
+   become: true
+
+ - name: check for oh-my-zsh
+   stat:
+     path: '/home/{{ user }}/.oh-my-zsh'
+   register: oh_my_zsh
+ 
+ - name: download oh-my-zsh installer
+   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > '/home/{{ user }}/.oh_my_installer'
+   when: not oh_my_zsh.stat.exists
+
+ - name: make oh-my-zsh installer executable
+   shell: chmod +x '/home/{{ user }}/.oh_my_installer'
+   when: not oh_my_zsh.stat.exists
+
+ - name: install oh-my-zsh
+   shell: '/home/{{ user }}/.oh_my_installer'
+   when: not oh_my_zsh.stat.exists
+
+ - name: remove oh-my-zsh installer
+   shell: rm '/home/{{ user }}/.oh_my_installer'
+   when: not oh_my_zsh.stat.exists
