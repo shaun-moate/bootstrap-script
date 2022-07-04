@@ -43,29 +43,6 @@
   - name: alacritty
     include: playbooks/alacritty.yml
 
-- name: Set-up shell (oh-my-zsh)
-  hosts: localhost
-  connection: local
-  become: true
-  vars:
-    USER: smoate
-
-  tasks:
-  - name: oh-my-zsh
-    include: playbooks/oh-my-zsh.yml
-
-- name: Set-up text editor (neovim)
-  hosts: localhost
-  connection: local
-  become: true
-  vars:
-    USER: smoate
-
-  tasks:
-  - name: neovim & vimplug
-    include: playbooks/neovim.yml
-
-
 - name: Set-up configurations (.dotfiles)
   hosts: localhost
   connection: local

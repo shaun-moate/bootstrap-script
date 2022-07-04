@@ -1,0 +1,3 @@
+---
+dotfilesdir: '/home/{{ user }}/.dotfiles'
+dotfilesrepo: 'git@github.com:shaun-moate/.dotfiles.git' 

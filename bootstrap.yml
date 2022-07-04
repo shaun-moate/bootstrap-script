@@ -9,5 +9,6 @@
   roles:
     - role: core-setup
     - role: install-shell
+    - role: install-dotfiles
     - role: install-zettel
       
