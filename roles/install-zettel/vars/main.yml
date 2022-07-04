@@ -1,3 +1,4 @@
 ---
-zetteldir: '/home/{{ user }}/zettelkasten'
-zettelrepo: 'git@github.com:shaun-moate/zettelkasten.git' 
+source: 'git@github.com:shaun-moate/zettelkasten.git'  
+directory: '/home/{{ user }}/zettelkasten'
+

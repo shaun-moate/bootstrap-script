@@ -1,9 +1,0 @@
----
-common:
-  - git
-  - openssh
-  - ripgrep
-  - fzf
-  - make
-  - ansible
-  - zsh

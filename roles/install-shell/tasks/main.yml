@@ -1,28 +1,75 @@
 ---
+ - name: install packages
+   become: true
+   package:
+     name: '{{ common }}'
+     state: present
+   tags: shell
+
+
  - name: set zsh as default shell
    user:
      name: '{{ user }}'
      shell: /bin/zsh
      state: present
    become: true
+   tags: shell
+
 
  - name: check for oh-my-zsh
    stat:
      path: '/home/{{ user }}/.oh-my-zsh'
    register: oh_my_zsh
+   tags: shell
+
  
  - name: download oh-my-zsh installer
-   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > '/home/{{ user }}/.oh_my_installer'
+   shell: curl -L '{{ source }}' > '{{ installer }}'
    when: not oh_my_zsh.stat.exists
+   tags: shell
+
 
  - name: make oh-my-zsh installer executable
-   shell: chmod +x '/home/{{ user }}/.oh_my_installer'
+   shell: chmod +x '{{ installer }}'
    when: not oh_my_zsh.stat.exists
+   tags: shell
+
 
  - name: install oh-my-zsh
-   shell: '/home/{{ user }}/.oh_my_installer'
+   shell: '{{ installer }}'
    when: not oh_my_zsh.stat.exists
+   tags: shell
+
 
  - name: remove oh-my-zsh installer
-   shell: rm '/home/{{ user }}/.oh_my_installer'
+   shell: rm '{{ installer }}'
    when: not oh_my_zsh.stat.exists
+   tags: shell 
+
+
+ - name: register if autosuggestions exists
+   stat:
+     path: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-autosuggestions'
+   register: autosuggest
+
+
+ - name: clone zsh-autosuggestions
+   git:
+     repo: '{{ suggestions }}'
+     dest: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-autosuggestions'
+     accept_hostkey: yes
+   when: autosuggest.stat.exists == False
+
+
+ - name: register if syntax-highlighting exists
+   stat:
+     path: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-syntax-highlighting'
+   register: syntaxhighlight
+
+
+ - name: clone zsh-syntaxhighlighting
+   git:
+     repo: '{{ syntax }}'
+     dest: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-syntax-highlighting'
+     accept_hostkey: yes
+   when: autosuggest.stat.exists == False

@@ -1,3 +1,4 @@
 ---
-dotfilesdir: '/home/{{ user }}/.dotfiles'
-dotfilesrepo: 'git@github.com:shaun-moate/.dotfiles.git' 
+source: 'git@github.com:shaun-moate/.dotfiles.git'  
+directory: '/home/{{ user }}/.dotfiles'
+

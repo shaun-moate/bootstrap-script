@@ -42,14 +42,3 @@
   tasks:
   - name: alacritty
     include: playbooks/alacritty.yml
-
-- name: Set-up configurations (.dotfiles)
-  hosts: localhost
-  connection: local
-  become: true
-  vars:
-    USER: smoate
-
-  tasks:
-  - name: .dotfiles
-    include: playbooks/configs.yml
