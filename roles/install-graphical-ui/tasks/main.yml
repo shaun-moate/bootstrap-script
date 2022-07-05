@@ -37,3 +37,19 @@
      name: '{{ editor }}'
      state: present
    tags: gui
+
+
+ - name: check if wallpapers exists
+   stat:
+     path: '/home/{{ user }}/wallpapers' 
+   register: wallpaper
+
+
+ - name: clone wallpapers
+   git:
+     repo: 'https://github.com/makccr/wallpapers'
+     dest: '/home/{{ user }}/wallpapers' 
+     depth: 1
+     accept_hostkey: yes
+   when: wallpaper.stat.exists == False
+
