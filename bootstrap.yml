@@ -8,5 +8,6 @@
 
   roles:
     - role: install-shell
+    - role: install-graphical-ui
     - role: install-dotfiles
     - role: install-zettel

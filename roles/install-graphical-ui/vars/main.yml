@@ -1,0 +1,15 @@
+---
+core:
+  - xorg-server 
+  - xorg-xinit 
+fonts:
+  - ttf-dejavu
+window:
+  - i3-gaps
+  - i3blocks
+  - i3lock
+  - i3status
+terminal:
+  - alacritty
+editor:
+  - neovim

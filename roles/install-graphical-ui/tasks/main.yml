@@ -1,0 +1,39 @@
+---
+ - name: install xorg
+   become: true
+   package:
+     name: '{{ core }}'
+     state: present
+   tags: gui
+
+
+ - name: install fonts
+   become: true
+   package:
+     name: '{{ fonts }}'
+     state: present
+   tags: gui
+
+
+ - name: install window manager
+   become: true
+   package:
+     name: '{{ window }}'
+     state: present
+   tags: gui
+
+
+ - name: install terminal emulator
+   become: true
+   package:
+     name: '{{ terminal }}'
+     state: present
+   tags: gui
+
+
+ - name: install text editor
+   become: true
+   package:
+     name: '{{ editor }}'
+     state: present
+   tags: gui
