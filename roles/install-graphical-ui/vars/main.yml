@@ -4,15 +4,29 @@ core:
   - xorg-xinit 
   - compton
   - feh
+sound:
+  - sof-firmware
+  - pipewire
+  - pipewire-pulse
+  - pipewire-alsa
 fonts:
   - ttf-dejavu
+  - powerline
+  - powerline-fonts
 window:
   - i3-gaps
   - i3blocks
   - i3lock
   - i3status
+  - dmenu
 terminal:
   - alacritty
 editor:
   - neovim
   - ripgrep
+lang:
+  - nodejs
+  - npm
+  - python
+tools:
+  - firefox

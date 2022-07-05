@@ -39,6 +39,22 @@
    tags: gui
 
 
+ - name: install languages
+   become: true
+   package:
+     name: '{{ lang }}'
+     state: present
+   tags: gui
+
+
+ - name: install tools
+   become: true
+   package:
+     name: '{{ tools }}'
+     state: present
+   tags: gui
+
+
  - name: check if wallpapers exists
    stat:
      path: '/home/{{ user }}/wallpapers' 
