@@ -7,6 +7,5 @@
 
 
   roles:
-    - role: install-shell
-    - role: install-dotfiles
-    - role: install-zettel
+    - role: install-core
+    - role: install-ssh-keys

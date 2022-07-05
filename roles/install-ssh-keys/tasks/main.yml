@@ -1,0 +1,42 @@
+---
+ - name: check if .ssh exists
+   stat:
+     path: '/home/{{ user }}/.ssh'
+   register: ssh_directory
+
+ 
+ - name: ensure .ssh directory exists
+   file:
+     dest: '/home/{{ user }}/.ssh'
+     mode: 0700
+     owner: '{{ user }}'
+     state: directory
+   when: ssh_directory.stat.exists == False
+
+
+ - name: install github private key
+   copy:
+     src: '{{ playbook_dir }}/files/github'
+     dest: '/home/{{ user }}/.ssh/github' 
+     mode: 0600
+     owner: '{{ user }}'
+     decrypt: true
+   when: ssh_directory.stat.exists == False
+   
+
+ - name: install github public key
+   copy:
+     src: '{{ playbook_dir }}/files/github.pub'
+     dest: '/home/{{ user }}/.ssh/github.pub' 
+     mode: 0600
+     owner: '{{ user }}'
+   when: ssh_directory.stat.exists == False
+
+
+ - name: add public key to known_hosts
+   known_hosts:
+     path: '/home/{{ user }}/.ssh/known_hosts' 
+     name: 'github.com'
+     key: "{{ lookup('pipe', 'ssh-keyscan github.com') }}"
+     hash_host: true
+   when: ssh_directory.stat.exists == False
