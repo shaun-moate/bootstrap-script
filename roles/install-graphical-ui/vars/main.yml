@@ -2,6 +2,8 @@
 core:
   - xorg-server 
   - xorg-xinit 
+  - compton
+  - feh
 fonts:
   - ttf-dejavu
 window:
