@@ -11,3 +11,4 @@
     - role: install-graphical-ui
     - role: install-dotfiles
     - role: install-zettel
+    - role: post-cleanup

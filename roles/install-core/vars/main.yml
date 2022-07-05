@@ -3,6 +3,5 @@ common:
 - ansible
 - git
 - openssh
-- ripgrep
 - make
 
