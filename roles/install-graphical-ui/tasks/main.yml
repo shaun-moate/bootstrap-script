@@ -7,6 +7,14 @@
    tags: gui
 
 
+ - name: install sound
+   become: true
+   package:
+     name: '{{ sound }}'
+     state: present
+   tags: gui
+
+
  - name: install fonts
    become: true
    package:
