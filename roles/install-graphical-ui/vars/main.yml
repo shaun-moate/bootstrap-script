@@ -9,8 +9,10 @@ sound:
   - pipewire
   - pipewire-pulse
   - pipewire-alsa
+  - alsa-utils
 fonts:
   - ttf-dejavu
+  - ttf-font-awesome
   - powerline
   - powerline-fonts
 window:
