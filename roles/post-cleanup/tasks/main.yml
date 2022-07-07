@@ -5,6 +5,3 @@
     repo: '/home/{{ user }}/projects/bootstrap-script'
     name: remote.origin.url
     value: 'git@github.com:shaun-moate/bootstrap-script.git'
-
-- name: sync doom.emacs
-  command: '/home/{{ user }}/.emacs.d/bin/doom sync'

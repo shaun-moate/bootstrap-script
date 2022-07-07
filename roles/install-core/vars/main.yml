@@ -5,4 +5,5 @@ common:
 - openssh
 - make
 - xclip
+- cmake
 
