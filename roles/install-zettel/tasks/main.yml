@@ -1,12 +1,7 @@
 ---
-  - name: check if zettelkasten exists
-    stat:
-      path: '{{ directory }}' 
-    register: zettelkasten
-
   - name: clone zettelkasten
     git:
       repo: '{{ source }}'
       dest: '{{ directory }}'
       accept_hostkey: yes
-    when: zettelkasten.stat.exists == False
+      update: no

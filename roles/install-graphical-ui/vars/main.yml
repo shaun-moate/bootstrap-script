@@ -4,6 +4,7 @@ core:
   - xorg-xinit 
   - compton
   - feh
+  - fd
 sound:
   - sof-firmware
   - pipewire
@@ -26,9 +27,12 @@ terminal:
 editor:
   - neovim
   - ripgrep
+  - emacs-nativecomp
 lang:
   - nodejs
   - npm
   - python
+  - shellcheck
+  - pandoc
 tools:
   - firefox

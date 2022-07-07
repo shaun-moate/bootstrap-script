@@ -63,6 +63,15 @@
    tags: gui
 
 
+ - name: ensure doom.emacs is present
+   git:
+     repo: 'https://github.com/doomemacs/doomemacs'
+     dest: '/home/{{ user }}/.emacs.d'
+     depth: 1
+     update: no
+   tags: gui
+
+
  - name: check if wallpapers exists
    stat:
      path: '/home/{{ user }}/wallpapers' 

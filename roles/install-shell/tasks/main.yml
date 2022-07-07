@@ -47,24 +47,12 @@
    tags: shell 
 
 
- - name: register if autosuggestions exists
-   stat:
-     path: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-autosuggestions'
-   register: autosuggest
-
-
  - name: clone zsh-autosuggestions
    git:
      repo: '{{ suggestions }}'
      dest: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-autosuggestions'
      accept_hostkey: yes
-   when: autosuggest.stat.exists == False
-
-
- - name: register if syntax-highlighting exists
-   stat:
-     path: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-syntax-highlighting'
-   register: syntaxhighlight
+     update: no
 
 
  - name: clone zsh-syntaxhighlighting
@@ -72,4 +60,4 @@
      repo: '{{ syntax }}'
      dest: '/home/{{ user }}/.oh-my-zsh/plugins/zsh-syntax-highlighting'
      accept_hostkey: yes
-   when: autosuggest.stat.exists == False
+     update: no

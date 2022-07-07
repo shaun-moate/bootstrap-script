@@ -1,18 +1,11 @@
 ---
- - name: register if .dotfiles exists
-   stat:
-     path: '{{ directory }}'
-   register: dotfiles
-
-
  - name: clone .dotfiles
    git:
      repo: '{{ source }}'
      dest: '{{ directory }}'
      accept_hostkey: yes
-   when: dotfiles.stat.exists == False
+     update: no
 
 
  - name: install .dotfiles
    shell: '{{ directory }}/install'
-   when: dotfiles.stat.exists == False
