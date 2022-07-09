@@ -5,6 +5,7 @@ core:
   - compton
   - feh
   - fd
+  - keychain
 sound:
   - sof-firmware
   - pipewire
