@@ -1,0 +1,9 @@
+---
+source-zettel: 'git@github.com:shaun-moate/shower-thoughts.git'
+directory-zettel: '/home/{{ user }}/Zettelkasten'
+
+source-notes: 'git@github.com:shaun-moate/notes.git'
+directory-notes: '/home/{{ user }}/Notes'
+
+source-creative: 'git@github.com:shaun-moate/creative-coding.git'
+directory-creative: '/home/{{ user }}/Projects/creative-coding'

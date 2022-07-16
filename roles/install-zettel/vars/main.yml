@@ -1,3 +1,0 @@
----
-source: 'git@github.com:shaun-moate/notes.git'
-directory: '/home/{{ user }}/notes'

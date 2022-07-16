@@ -1,0 +1,21 @@
+---
+- name: clone zettelkasten
+  git:
+    repo: '{{ source-zettel }}'
+    dest: '{{ directory-zettel }}'
+    accept_hostkey: yes
+    update: no
+
+- name: clone notes
+  git:
+    repo: '{{ source-notes }}'
+    dest: '{{ directory-notes }}'
+    accept_hostkey: yes
+    update: no
+
+- name: clone creative coding
+  git:
+    repo: '{{ source-creative }}'
+    dest: '{{ directory-creative }}'
+    accept_hostkey: yes
+    update: no

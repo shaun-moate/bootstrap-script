@@ -1,7 +1,0 @@
----
-  - name: clone zettelkasten
-    git:
-      repo: '{{ source }}'
-      dest: '{{ directory }}'
-      accept_hostkey: yes
-      update: no

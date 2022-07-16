@@ -10,5 +10,5 @@
     - role: install-shell
     - role: install-graphical-ui
     - role: install-dotfiles
-    - role: install-zettel
+    - role: install-git
     - role: post-cleanup
