@@ -1,4 +1,11 @@
 ---
+- name: clone wallpapers
+  git:
+    repo: '{{ source-wallpapers }}'
+    dest: '{{ directory-wallpapers }}'
+    accept_hostkey: yes
+    update: no
+
 - name: clone zettelkasten
   git:
     repo: '{{ source-zettel }}'

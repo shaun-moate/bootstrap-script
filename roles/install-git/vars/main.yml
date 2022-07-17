@@ -1,4 +1,7 @@
 ---
+source-wallpapers: 'git@github.com:shaun-moate/wallpapers.git'
+directory-wallpapers: '/home/{{ user }}/Wallpapers'
+
 source-zettel: 'git@github.com:shaun-moate/shower-thoughts.git'
 directory-zettel: '/home/{{ user }}/Zettelkasten'
 
