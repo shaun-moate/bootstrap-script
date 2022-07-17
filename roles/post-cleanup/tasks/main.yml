@@ -2,6 +2,6 @@
 - name: convert bootstrap-script to ssh connection
   community.general.git_config:
     scope: local
-    repo: '/home/{{ user }}/projects/bootstrap-script'
+    repo: '/home/{{ user }}/Projects/bootstrap-script'
     name: remote.origin.url
     value: 'git@github.com:shaun-moate/bootstrap-script.git'
