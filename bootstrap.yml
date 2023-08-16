@@ -9,3 +9,5 @@
     - role: ssh
     - role: neovim
     - role: oh-my-zsh
+
+    - role: dotfiles
