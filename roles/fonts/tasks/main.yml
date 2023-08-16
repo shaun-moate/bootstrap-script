@@ -1,0 +1,10 @@
+---
+# tasks to install fonts
+- name: tap homebrew repositories
+  homebrew_tap:
+    name: "homebrew/cask-fonts"
+- name: install jetbrains-mono via homebrew
+  homebrew_cask:
+    name: "font-jetbrains-mono-nerd-font"
+    update_homebrew: yes 
+

@@ -1,14 +1,12 @@
 ---
 - name: install .dotfiles via git
   ansible.builtin.git:
-    repo: https://github.com/shaun-moate/.dotfiles.git
+    repo: git@github.com:shaun-moate/.dotfiles.git
     dest: ~/.dotfiles
     depth: 1
-
 - name: establish symlinks
   command: ~/.dotfiles/install
   register: std_output
-
 - name: print dotbot output
   debug:
     var: std_output.stdout

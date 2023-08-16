@@ -1,0 +1,20 @@
+---
+# tasks to install doom emacs
+- name: tap homebrew repositories
+  homebrew_tap:
+    name: "railwaycat/emacsmacport"
+- name: install emacs via homebrew
+  homebrew_cask:
+    name: "emacs-mac"
+    update_homebrew: yes 
+- name: install doom-emacs via git
+  ansible.builtin.git:
+    repo: https://github.com/doomemacs/doomemacs.git
+    dest: ~/.emacs.d
+    depth: 1
+- name: install doom-emacs
+  command: "~/.emacs.d/bin/doom install --force"
+  register: std_output
+- name: print doom-emacs output
+  debug:
+    var: std_output.stdout

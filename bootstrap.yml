@@ -7,7 +7,14 @@
 
   roles:
     - role: ssh
-    - role: neovim
+    - role: fonts
     - role: oh-my-zsh
 
+    - role: cmake
+    - role: sqlite
+
+    - role: neovim
+    - role: emacs
+
     - role: dotfiles
+    - role: finalize

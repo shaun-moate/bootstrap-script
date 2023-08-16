@@ -1,0 +1,6 @@
+---
+- name: install cmake via homebrew
+  homebrew:
+    name: "cmake"
+    update_homebrew: yes 
+
