@@ -1,0 +1,10 @@
+---
+- name: Bootstrap-Script
+  hosts: localhost
+  connection: local
+  vars:
+    user: smoate
+
+  roles:
+    - role: install-ssh
+#    - role: implement-git
