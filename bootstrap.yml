@@ -5,16 +5,41 @@
   vars:
     user: user
 
+  # TODO organise roles into structure set out below (editors should contain nvim and emacs set-up)
   roles:
+    # Fundamentals
     - role: ssh
-    - role: fonts
-    - role: oh-my-zsh
 
-    - role: cmake
+    # Themes
+    - role: fonts
+
+    # Terminal
+    - role: oh-my-zsh
+    # TODO add tmux support
+
+    # CLI
+    # TODO add git
+    # TODO add aws-cli
+
+    # Databases
     - role: sqlite
 
+    # Editors
     - role: neovim
     - role: emacs
 
+    # Languages
+    - role: cmake
+    - role: python
+    # TODO add lua support
+    # TODO add typescript/node support
+
+    # Utilities
+    - role: arc-browser
+    - role: alfred
+
+    # Clean-up
     - role: dotfiles
+    # TODO git clone common personal git repo's
+    # TODO fix the taskbar to only include apps that I find useful
     - role: finalize

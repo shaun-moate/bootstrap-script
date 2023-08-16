@@ -2,5 +2,8 @@
 - name: install cmake via homebrew
   homebrew:
     name: "cmake"
-    update_homebrew: yes 
-
+    update_homebrew: yes
+- name: install nasm via homebrew
+  homebrew:
+    name: "nasm"
+    update_homebrew: yes

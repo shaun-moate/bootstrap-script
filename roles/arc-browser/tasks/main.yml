@@ -1,0 +1,5 @@
+---
+- name: install arc-browser via homebrew
+  homebrew_cask:
+    name: "arc"
+    update_homebrew: yes
