@@ -3,8 +3,9 @@
   hosts: localhost
   connection: local
   vars:
-    user: smoate
+    user: user
 
   roles:
-    - role: install-ssh
-#    - role: implement-git
+    - role: ssh
+#    - role: git
+    - role: neovim
