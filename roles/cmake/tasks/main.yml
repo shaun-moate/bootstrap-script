@@ -3,6 +3,7 @@
   homebrew:
     name: "cmake"
     update_homebrew: yes
+
 - name: install nasm via homebrew
   homebrew:
     name: "nasm"

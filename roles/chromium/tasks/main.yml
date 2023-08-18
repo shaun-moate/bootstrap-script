@@ -1,0 +1,7 @@
+---
+- name: install chromium via homebrew
+  homebrew_cask:
+    name: "chromium"
+    update_homebrew: yes
+
+# TODO: look into how to install chrome extensions

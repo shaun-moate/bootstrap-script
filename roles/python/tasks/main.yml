@@ -3,10 +3,12 @@
   homebrew:
     name: "python"
     update_homebrew: yes
+
 - name: install poetry via homebrew
   homebrew:
     name: "poetry"
     update_homebrew: yes
+
 - name: install tox via homebrew
   homebrew:
     name: "tox"

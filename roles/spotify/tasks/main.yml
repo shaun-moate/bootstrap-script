@@ -1,0 +1,5 @@
+---
+- name: install spotify via homebrew
+  homebrew_cask:
+    name: "spotify"
+    update_homebrew: yes
