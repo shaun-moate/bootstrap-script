@@ -1,0 +1,18 @@
+---
+- name: Clone Notes
+  ansible.builtin.git:
+    repo: git@github.com:shaun-moate/Notes.git
+    dest: ~/Notes
+    depth: 1
+
+- name: Clone Zettelkasten
+  ansible.builtin.git:
+    repo: git@github.com:shaun-moate/zettelkasten.git
+    dest: ~/Zettelkasten
+    depth: 1
+
+- name: Clone Work Notes
+  ansible.builtin.git:
+    repo: git@github.com:shaun-moate/zettelkasten.git
+    dest: ~/Work
+    depth: 1

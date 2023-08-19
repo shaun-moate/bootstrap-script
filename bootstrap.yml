@@ -5,7 +5,9 @@
   vars:
     user: user
 
-  # TODO organise roles into structure set out below (editors should contain nvim and emacs set-up)
+  # TODO: add tagging strategy for all the roles (personal, work etc.)
+  # TODO: fix the 'user' param to read from the environment in all roles (lookup('user', 'ENV'))??
+  # TODO: organise roles into structure set out below (editors should contain nvim and emacs set-up)
   roles:
     # Fundamentals
     - role: ssh
@@ -43,7 +45,7 @@
 
     # Clean-up
     - role: dotfiles
-    # TODO git clone common personal git repo's
+    - role: repositories
     - role: dock
     # TODO: need to review dockutils usage (not consistent behaviour)
     - role: finalize
