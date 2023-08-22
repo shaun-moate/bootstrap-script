@@ -1,32 +1,32 @@
 ---
-- name: Ensure dockutils is installed
-  homebrew:
-    name: "dockutil"
-    update_homebrew: yes
-  tags: [ phoenix, work ]
+- name: install dockutil
+  community.general.homebrew_cask:
+    name: "{{ dockutil_homebrew_cask }}"
+    state: present
+  notify:
+    - clear homebrew cache
+  when: dockutil_install
+  tags: [ phoenix ]
 
-- name: Remove all applications from dock
-  shell: "dockutil --remove all /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
-  ignore_errors: true
-  changed_when: false
-  tags: [ phoenix, work ]
+- name: remove all dock items
+  ansible.builtin.include_tasks: dock-reset.yml
+  when: "{{ dockitems_reset }}"
+  tags: [ phoenix ]
 
-- name: "Adding 'Emacs' as application to dock"
-  shell: "dockutil --add '/Applications/Emacs.app' --label 'Emacs' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
-  tags: [ phoenix, work ]
-  # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
+- name: remove configured dock items
+  ansible.builtin.include_tasks: dock-remove.yml
+  loop: "{{ dockitems_remove }}"
+  tags: [ phoenix ]
 
-- name: "Adding 'Chromium' as application to dock"
-  shell: "dockutil --add '/Applications/Chromium.app' --label 'Chromium' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
-  tags: [ phoenix, work ]
-  # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
+- name: ensure required dock items exist
+  ansible.builtin.include_tasks: dock-add.yml
+  loop: "{{ dockitems_persist }}"
+  tags: [ phoenix ]
 
-- name: "Adding 'Spotify' as application to dock"
-  shell: "dockutil --add '/Applications/Spotify.app' --label 'Spotify' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
-  tags: [ phoenix, work ]
-  # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
-
-- name: "Adding 'Whatsapp' as application to dock"
-  shell: "dockutil --add '/Applications/WhatsApp.app' --label 'WhatsApp' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
-  tags: [ phoenix, work ]
-  # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
+- name: ensure dock items are in correct position
+  ansible.builtin.include_tasks: dock-position.yml
+  when:
+    - item.pos is defined
+    - item.pos > 0
+  loop: "{{ dockitems_persist }}"
+  tags: [ phoenix ]

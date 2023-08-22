@@ -3,16 +3,32 @@
   hosts: localhost
   connection: local
 
+  vars:
+    dockitems_reset: True
+    dockitems_persist:
+     - name: Emacs
+       path: "/Applications/Emacs.app/"
+       pos: 1
+     - name: Chromium
+       path: "/Applications/Chromium.app/"
+       pos: 2
+     - name: WhatsApp
+       path: "/Applications/WhatsApp.app/"
+       pos: 3
+     - name: Spotify
+       path: "/Applications/Spotify.app/"
+       pos: 4
+
   # TODO: organise roles into structure set out below (editors should contain nvim and emacs set-up)
   roles:
     # Fundamentals
-    - role: ssh
+    - ssh
 
     # Themes
-    - role: fonts
+    - fonts
 
     # Terminal
-    - role: oh-my-zsh
+    - oh-my-zsh
     # TODO add tmux support
 
     # CLI
@@ -20,31 +36,31 @@
     # TODO add aws-cli
 
     # Databases
-    - role: sqlite
+    - sqlite
 
     # Editors
-    - role: neovim
-    - role: emacs
+    - neovim
+    - emacs
 
     # Languages
-    - role: assembly
-    - role: cmake
-    - role: python
+    - assembly
+    - cmake
+    - python
     # TODO look into asdf
     # TODO add lua support
     # TODO add typescript/node support
 
     # Utilities
     # - role: arc-browser " requires at least Monterey OS
-    - role: alfred
-    - role: chromium
-    - role: spotify
-    - role: whatsapp
+    - alfred
+    - chromium
+    - spotify
+    - whatsapp
+    - dock
 
     # Clean-up
-    - role: dotfiles
-    - role: repositories
-    - role: dock
+    - dotfiles
+    - repositories
     # TODO: need to review dockutils usage (not consistent behaviour)
 
-    - role: clean-up
+    - clean-up

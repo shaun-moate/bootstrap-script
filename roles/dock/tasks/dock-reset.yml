@@ -1,0 +1,5 @@
+---
+- name: remove all applications from dock
+  shell: "dockutil --remove all --no-restart"
+  ignore_errors: true
+  changed_when: false

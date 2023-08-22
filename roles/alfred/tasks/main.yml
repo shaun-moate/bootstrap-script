@@ -3,4 +3,4 @@
   homebrew_cask:
     name: "alfred"
     update_homebrew: yes
-    - role: alfred
+  tags: [ phoenix, work ]
