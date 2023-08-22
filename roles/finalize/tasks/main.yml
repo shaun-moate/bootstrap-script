@@ -1,7 +1,0 @@
----
-- name: sync config for doom-emacs
-  command: "~/.emacs.d/bin/doom sync -u"
-  register: std_output
-- name: print doom sync output
-  debug:
-    var: std_output.stdout

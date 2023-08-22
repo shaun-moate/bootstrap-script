@@ -1,12 +1,8 @@
 ---
-- name: Bootstrap-Script
+- name: bootstrap-script
   hosts: localhost
   connection: local
-  vars:
-    user: user
 
-  # TODO: add tagging strategy for all the roles (personal, work etc.)
-  # TODO: fix the 'user' param to read from the environment in all roles (lookup('user', 'ENV'))??
   # TODO: organise roles into structure set out below (editors should contain nvim and emacs set-up)
   roles:
     # Fundamentals
@@ -31,21 +27,24 @@
     - role: emacs
 
     # Languages
+    - role: assembly
     - role: cmake
     - role: python
+    # TODO look into asdf
     # TODO add lua support
     # TODO add typescript/node support
 
     # Utilities
     # - role: arc-browser " requires at least Monterey OS
+    - role: alfred
     - role: chromium
     - role: spotify
     - role: whatsapp
-    - role: alfred
 
     # Clean-up
     - role: dotfiles
     - role: repositories
     - role: dock
     # TODO: need to review dockutils usage (not consistent behaviour)
-    - role: finalize
+
+    - role: clean-up

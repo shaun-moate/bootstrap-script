@@ -3,24 +3,30 @@
   homebrew:
     name: "dockutil"
     update_homebrew: yes
+  tags: [ phoenix, work ]
 
 - name: Remove all applications from dock
-  shell: "dockutil --remove all /Users/user"
+  shell: "dockutil --remove all /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
   ignore_errors: true
   changed_when: false
+  tags: [ phoenix, work ]
 
 - name: "Adding 'Emacs' as application to dock"
-  shell: "dockutil --add '/Applications/Emacs.app' --label 'Emacs' /Users/user"
+  shell: "dockutil --add '/Applications/Emacs.app' --label 'Emacs' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags: [ phoenix, work ]
   # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
 
 - name: "Adding 'Chromium' as application to dock"
-  shell: "dockutil --add '/Applications/Chromium.app' --label 'Chromium' /Users/user"
+  shell: "dockutil --add '/Applications/Chromium.app' --label 'Chromium' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags: [ phoenix, work ]
   # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
 
 - name: "Adding 'Spotify' as application to dock"
-  shell: "dockutil --add '/Applications/Spotify.app' --label 'Spotify' /Users/user"
+  shell: "dockutil --add '/Applications/Spotify.app' --label 'Spotify' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags: [ phoenix, work ]
   # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)
 
 - name: "Adding 'Whatsapp' as application to dock"
-  shell: "dockutil --add '/Applications/WhatsApp.app' --label 'WhatsApp' /Users/user"
+  shell: "dockutil --add '/Applications/WhatsApp.app' --label 'WhatsApp' /Users/{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags: [ phoenix, work ]
   # when: not macos_dock_index.stdout and (item.view is undefined) and (item.display is undefined) and (item.url is undefined)

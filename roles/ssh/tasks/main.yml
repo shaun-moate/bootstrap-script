@@ -1,39 +1,45 @@
 ---
 - name: Check .ssh DIRECTORY exists
   stat:
-    path: "{{ ssh_directory }}"
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
   register: ssh_directory
+  tags: [ phoenix, work ]
 
 - name: Create .ssh DIRECTORY, if doesn't exist
   file:
-    dest: "{{ dest_private_key | dirname }}"
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
     mode: 0700
-    owner: user
+    owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
     state: directory
+  tags: [ phoenix, work ]
   when: not ssh_directory.stat.exists
 
 - name: Check PRIVATE ssh key exists
   stat:
-    path: "{{ dest_private_key }}"
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/id_ed25519"
   register: ssh_private_key
+  tags: [ phoenix, work ]
 
 - name: Install PRIVATE ssh key, if doesn't exist
   copy:
-    src: "{{ src_private_key }}"
-    dest: "{{ dest_private_key }}"
+    src: "id_ed25519"
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/id_ed25519"
     mode: 0600
-    owner: user
+    owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags: [ phoenix, work ]
   when: not ssh_private_key.stat.exists
 
 - name: Check PUBLIC ssh key exists
   stat:
-    path: "{{ dest_public_key }}"
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/id_ed25519.pub"
   register: ssh_public_key
+  tags: [ phoenix, work ]
 
 - name: Install PUBLIC ssh key, if doesn't exist
   copy:
-    src: "{{ src_public_key }}"
-    dest: "{{ dest_public_key }}"
+    src: "id_ed25519.pub"
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/id_ed25519.pub"
     mode: 0600
-    owner: user
+    owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
+  tags: [ phoenix, work ]
   when: not ssh_public_key.stat.exists

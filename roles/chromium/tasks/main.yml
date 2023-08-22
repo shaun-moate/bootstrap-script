@@ -3,5 +3,6 @@
   homebrew_cask:
     name: "chromium"
     update_homebrew: yes
+  tags: [ phoenix, work ]
 
 # TODO: look into how to install chrome extensions

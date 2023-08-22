@@ -2,11 +2,16 @@
 - name: install .dotfiles via git
   ansible.builtin.git:
     repo: git@github.com:shaun-moate/.dotfiles.git
-    dest: ~/.dotfiles
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.dotfiles"
     depth: 1
+  tags: [ phoenix, work ]
+
 - name: establish symlinks
-  command: ~/.dotfiles/install
+  command: "{{ lookup('ansible.builtin.env', 'HOME') }}/.dotfiles/install"
   register: std_output
+  tags: [ phoenix, work ]
+
 - name: print dotbot output
   debug:
     var: std_output.stdout
+  tags: [ phoenix, work ]

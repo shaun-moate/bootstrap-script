@@ -3,7 +3,10 @@
 - name: tap homebrew repositories
   homebrew_tap:
     name: "neovim/neovim"
+  tags: [ phoenix, work ]
+
 - name: install neovim via homebrew
   homebrew:
     name: "neovim"
-    update_homebrew: yes 
+    update_homebrew: yes
+  tags: [ phoenix, work ]

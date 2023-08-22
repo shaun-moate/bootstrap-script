@@ -3,3 +3,4 @@
   homebrew_cask:
     name: "spotify"
     update_homebrew: yes
+  tags: [ phoenix, work ]

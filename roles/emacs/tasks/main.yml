@@ -3,22 +3,27 @@
 - name: tap homebrew repositories
   homebrew_tap:
     name: "railwaycat/emacsmacport"
+  tags: [ phoenix, work ]
 
 - name: install emacs via homebrew
   homebrew_cask:
     name: "emacs-mac"
     update_homebrew: yes
+  tags: [ phoenix, work ]
 
 - name: install doom-emacs via git
   ansible.builtin.git:
     repo: https://github.com/doomemacs/doomemacs.git
-    dest: ~/.emacs.d
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.emacs.d"
     depth: 1
+  tags: [ phoenix, work ]
 
 - name: install doom-emacs
-  command: "~/.emacs.d/bin/doom install --force"
+  command: "{{ lookup('ansible.builtin.env', 'HOME') }}/.emacs.d/bin/doom install --force"
   register: std_output
+  tags: [ phoenix, work ]
 
 - name: print doom-emacs output
   debug:
     var: std_output.stdout
+  tags: [ phoenix, work ]

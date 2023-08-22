@@ -1,6 +1,6 @@
 ---
-- name: install cmake via homebrew
+- name: install nasm via homebrew
   homebrew:
-    name: "cmake"
+    name: "nasm"
     update_homebrew: yes
   tags: [ phoenix, work ]
