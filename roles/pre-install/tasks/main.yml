@@ -13,3 +13,7 @@
   ansible.builtin.include_tasks: ssh-known-hosts.yml
   when: "{{ ssh_reset }}"
   tags: [ pre-install ]
+
+- name: set-url for bootstrap-script
+  ansible.builtin.include_tasks: set-url-bootstrap.yml
+  tags: [ pre-install ]
