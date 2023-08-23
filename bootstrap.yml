@@ -4,7 +4,7 @@
   connection: local
 
   vars:
-    # ssh
+    # pre-install
     ssh_reset: true
     ssh_persist:
      - name: id_ed25519
@@ -40,11 +40,22 @@
        path: /Applications/Spotify.app
        pos: 4
 
-  # TODO: consider again tagging strategy
-  # TODO: organise roles into structure set out below (editors should contain nvim and emacs set-up)
+    # post-install
+    repos_persist:
+      - name: Notes
+        git: git@github.com:shaun-moate/notes.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Notes"
+      - name: Work-Notes
+        git: git@github.com:shaun-moate/work-notes.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Work"
+      - name: Zettelkasten
+        git: git@github.com:shaun-moate/zettelkasten.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Zettelkasten"
+    dotfiles_install: true
+    doom_sync: true
+
   roles:
-    - ssh
-    - fonts
+    - pre-install
 
     # Terminal
     - oh-my-zsh
@@ -68,12 +79,7 @@
     # TODO add lua support
     # TODO add typescript/node support
 
+    - fonts
     - apps
     - dock
-
-    # Clean-up
-    - dotfiles
-    - repositories
-    # TODO: need to review dockutils usage (not consistent behaviour)
-
-    - clean-up
+    - post-install

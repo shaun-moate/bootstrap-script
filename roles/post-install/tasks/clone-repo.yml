@@ -1,0 +1,8 @@
+---
+- name: "git clone {{ item.name }}"
+  ansible.builtin.git:
+    repo: "{{ item.git }}"
+    dest: "{{ item.path }}"
+    depth: 1
+  ignore_errors: true
+  tags: [ post-install ]

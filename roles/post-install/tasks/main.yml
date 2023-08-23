@@ -1,0 +1,15 @@
+---
+- name: git clone default repos
+  ansible.builtin.include_tasks: clone-repo.yml
+  loop: "{{ repos_persist }}"
+  tags: [ post-install ]
+
+- name: implemented dotfiles and symlinks
+  ansible.builtin.include_tasks: dotfiles-install.yml
+  when: "{{ dotfiles_install }}"
+  tags: [ post-install ]
+
+- name: run 'doom sync' to ensure doom config installed
+  ansible.builtin.include_tasks: doom-sync.yml
+  when: "{{ doom_sync }}"
+  tags: [ post-install ]

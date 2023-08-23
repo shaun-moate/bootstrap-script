@@ -3,7 +3,7 @@
   stat:
     path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/{{ item.name }}"
   register: ssh_key
-  tags: [ ssh ]
+  tags: [ pre-install ]
 
 - name: "install {{ item.name }} from vault, if doesn't exist"
   copy:
@@ -12,4 +12,4 @@
     mode: 0600
     owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
   when: not ssh_key.stat.exists
-  tags: [ ssh ]
+  tags: [ pre-install ]

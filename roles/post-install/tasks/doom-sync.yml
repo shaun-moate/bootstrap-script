@@ -1,0 +1,4 @@
+---
+- name: sync config for doom-emacs
+  command: "{{ lookup('ansible.builtin.env', 'HOME') }}/.emacs.d/bin/doom sync -u"
+  tags: [ post-install ]

@@ -2,9 +2,14 @@
 - name: reset .ssh dired
   ansible.builtin.include_tasks: ssh-reset.yml
   when: "{{ ssh_reset }}"
-  tags: [ ssh ]
+  tags: [ pre-install ]
 
 - name: ensure required ssh keys exist
   ansible.builtin.include_tasks: ssh-add.yml
   loop: "{{ ssh_persist }}"
-  tags: [ ssh ]
+  tags: [ pre-install ]
+
+- name: add keys to known_hosts
+  ansible.builtin.include_tasks: ssh-known-hosts.yml
+  when: "{{ ssh_reset }}"
+  tags: [ pre-install ]
