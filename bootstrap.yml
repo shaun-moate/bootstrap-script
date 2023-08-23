@@ -4,6 +4,8 @@
   connection: local
 
   vars:
+    hostname: phoenix
+
     # pre-install
     ssh_reset: true
     ssh_persist:
@@ -69,6 +71,7 @@
      - name: Spotify
        path: /Applications/Spotify.app
        pos: 4
+       # TODO add capability to add a line spacer
 
     # post-install
     repos_persist:
@@ -90,15 +93,15 @@
   roles:
     - pre-install
     - utils
+    # TODO add cli support (ie. aws-cli)
+    # TODO add tmux support
     - langs
-    # TODO look into asdf
     # TODO add lua support
     # TODO add typescript/node support
-    # TODO add tmux support
-    # TODO add cli support (ie. aws-cli)
     - fonts
     - term
     - editors
     - apps
+    # TODO look at VMWare, Shadow, more?
     - dock
     - post-install

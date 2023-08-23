@@ -17,3 +17,9 @@
 - name: set-url for bootstrap-script
   ansible.builtin.include_tasks: set-url-bootstrap.yml
   tags: [ pre-install ]
+
+- name: set the hostname
+  ansible.builtin.hostname:
+    name: phoenix
+  become: yes
+  tags: [ pre-install ]
