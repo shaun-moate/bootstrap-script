@@ -1,0 +1,6 @@
+---
+# tasks to install langs
+- name: install langs
+  ansible.builtin.include_tasks: langs-add.yml
+  loop: "{{ langs_persist }}"
+  tags: [ langs ]

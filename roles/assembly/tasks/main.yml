@@ -1,6 +1,0 @@
----
-- name: install nasm via homebrew
-  homebrew:
-    name: "nasm"
-    update_homebrew: yes
-  tags: [ phoenix, work ]

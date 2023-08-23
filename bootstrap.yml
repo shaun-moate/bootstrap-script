@@ -10,6 +10,11 @@
      - name: id_ed25519
      - name: id_ed25519.pub
 
+    # languages
+    langs_persist:
+      - name: nasm
+      - name: cmake
+
     # fonts
     fonts_persist:
      - name: JetBrains Mono Nerd Font
@@ -60,6 +65,8 @@
 
   roles:
     - pre-install
+    # - utilities
+    - langs
 
     # Terminal
     - oh-my-zsh
@@ -69,8 +76,6 @@
     # TODO add aws-cli
 
     # Languages
-    - assembly
-    - cmake
     - python
     # TODO look into asdf
     # TODO add lua support
