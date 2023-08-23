@@ -1,6 +1,0 @@
----
-- name: install sqlite via homebrew
-  homebrew:
-    name: "sqlite"
-    update_homebrew: yes
-  tags: [ phoenix, work ]

@@ -1,0 +1,5 @@
+---
+# signal if should install doom-emacs
+doom_emacs_install: false
+# signal if should install doom-emacs
+neovim_install: false
