@@ -1,0 +1,6 @@
+---
+# tasks to install term
+- name: install terminal
+  ansible.builtin.include_tasks: oh-my-zsh-install.yml
+  when: "{{ oh_my_zsh_install }}"
+  tags: [ term ]

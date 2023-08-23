@@ -27,6 +27,9 @@
        tap: homebrew/cask-fonts
        cask: font-jetbrains-mono-nerd-font
 
+    # terminal
+    oh_my_zsh_install: true
+
     # editors
     doom_emacs_install: true
     neovim_install: true
@@ -71,24 +74,15 @@
 
   roles:
     - pre-install
-    # - utilities
     - utils
     - langs
-
-    # Terminal
-    - oh-my-zsh
-    # TODO add tmux support
-
-    # CLI
-    # TODO add aws-cli
-
-    # Languages
-    - python
     # TODO look into asdf
     # TODO add lua support
     # TODO add typescript/node support
-
+    # TODO add tmux support
+    # TODO add cli support (ie. aws-cli)
     - fonts
+    - term
     - editors
     - apps
     - dock
