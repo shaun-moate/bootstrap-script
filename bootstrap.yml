@@ -4,36 +4,38 @@
   connection: local
 
   vars:
-    # ssh configuration
+    # ssh
     ssh_reset: true
     ssh_persist:
      - name: id_ed25519
      - name: id_ed25519.pub
 
-    # dock configuration
+    # fonts
+    fonts_persist:
+     - name: JetBrains Mono Nerd Font
+       cask: homebrew/cask-fonts
+       src: font-jetbrains-mono-nerd-font
+
+    # dock
     dockitems_reset: true
     dockitems_persist:
      - name: Emacs
-       path: "/Applications/Emacs.app"
+       path: /Applications/Emacs.app
        pos: 1
      - name: Chromium
-       path: "/Applications/Chromium.app"
+       path: /Applications/Chromium.app
        pos: 2
      - name: WhatsApp
-       path: "/Applications/WhatsApp.app"
+       path: /Applications/WhatsApp.app
        pos: 3
      - name: Spotify
-       path: "/Applications/Spotify.app"
+       path: /Applications/Spotify.app
        pos: 4
 
   # TODO: consider again tagging strategy
   # TODO: organise roles into structure set out below (editors should contain nvim and emacs set-up)
   roles:
-    # TODO: create homebrew utility to install and manage apps/casks
-    # Fundamentals
     - ssh
-
-    # Themes
     - fonts
 
     # Terminal
@@ -41,7 +43,6 @@
     # TODO add tmux support
 
     # CLI
-    # TODO add git
     # TODO add aws-cli
 
     # Databases

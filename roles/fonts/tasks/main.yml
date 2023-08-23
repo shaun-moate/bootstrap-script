@@ -1,12 +1,6 @@
 ---
 # tasks to install fonts
-- name: tap homebrew repositories
-  homebrew_tap:
-    name: "homebrew/cask-fonts"
-  tags: [ phoenix, work ]
-
-- name: install jetbrains-mono via homebrew
-  homebrew_cask:
-    name: "font-jetbrains-mono-nerd-font"
-    update_homebrew: yes
-  tags: [ phoenix, work ]
+- name: install fonts
+  ansible.builtin.include_tasks: fonts-add.yml
+  loop: "{{ fonts_persist }}"
+  tags: [ fonts ]

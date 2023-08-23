@@ -1,0 +1,11 @@
+---
+- name: "tap {{ item.cask }}"
+  homebrew_tap:
+    name: "{{ item.cask }}"
+  tags: [ fonts ]
+
+- name: "install {{ item.name }}"
+  homebrew_cask:
+    name: "{{ item.src }}"
+    update_homebrew: yes
+  tags: [ fonts ]

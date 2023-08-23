@@ -1,5 +1,5 @@
-install/phoenix:
-	ansible-playbook bootstrap.yml --ask-vault-pass --ask-become-pass --tags "phoenix"
+install:
+	ansible-playbook bootstrap.yml --ask-vault-pass --ask-become-pass --tags "ssh,fonts,dock"
 
-install/work:
-	ansible-playbook bootstrap.yml --ask-vault-pass --ask-become-pass --tags "work"
+list-tasks:
+	ansible-playbook bootstrap.yml --tags "ssh,fonts,dock" --list-tasks
