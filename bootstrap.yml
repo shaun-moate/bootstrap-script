@@ -81,6 +81,9 @@
       - name: Zettelkasten
         git: git@github.com:shaun-moate/zettelkasten.git
         path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Zettelkasten"
+      - name: ml-bootstrap-example
+        git: git@github.com:shaun-moate/ml-bootstrap-example.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Code/ml-bootstrap-example"
     dotfiles_install: true
     doom_sync: true
 

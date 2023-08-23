@@ -2,7 +2,7 @@
 - name: git clone default repos
   ansible.builtin.include_tasks: clone-repo.yml
   loop: "{{ repos_persist }}"
-  tags: [ post-install ]
+  tags: [ post-install, git ]
 
 - name: implemented dotfiles and symlinks
   ansible.builtin.include_tasks: dotfiles-install.yml

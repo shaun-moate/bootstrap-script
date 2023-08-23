@@ -5,4 +5,4 @@
     dest: "{{ item.path }}"
     depth: 1
   ignore_errors: true
-  tags: [ post-install ]
+  tags: [ post-install, git ]
