@@ -4,3 +4,15 @@
   ansible.builtin.include_tasks: langs-add.yml
   loop: "{{ langs_persist }}"
   tags: [ langs ]
+
+# tasks to install asdf plugins
+- name: install asdf plugins
+  ansible.builtin.include_tasks: asdf-plugins-add.yml
+  loop: "{{ asdf_plugins }}"
+  tags: [ langs ]
+
+# tasks to install python versions (via asdf)
+- name: install asdf plugins
+  ansible.builtin.include_tasks: python-versions-add.yml
+  loop: "{{ python_versions }}"
+  tags: [ langs ]

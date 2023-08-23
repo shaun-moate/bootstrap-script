@@ -12,14 +12,27 @@
 
     # utilities
     utils_persist:
+      - name: asdf
       - name: ripgrep
       - name: poetry
       - name: tox
+      - name: openssl
+      - name: readline
+      - name: sqlite3
+      - name: xz
+      - name: zlib
+      - name: tcl-tk
 
     # languages
     langs_persist:
       - name: nasm
       - name: cmake
+    asdf_plugins:
+      - name: python
+    python_versions:
+      - version: 3.8.10
+      - version: 3.9.1
+      - version: latest
 
     # fonts
     fonts_persist:
@@ -37,8 +50,7 @@
     # applications
     apps_persist:
      - cask: alfred
-     - cask: chromium
-     # - cask: arc-browser
+     - cask: arc
      - cask: spotify
      - cask: whatsapp
 
@@ -48,8 +60,8 @@
      - name: Emacs
        path: /Applications/Emacs.app
        pos: 1
-     - name: Chromium
-       path: /Applications/Chromium.app
+     - name: Arc
+       path: /Applications/Arc.app
        pos: 2
      - name: WhatsApp
        path: /Applications/WhatsApp.app

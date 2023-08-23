@@ -1,3 +1,5 @@
 ---
 # langauges to be installed by default
 langs_persist: []
+# asdf plugins to be installed by default
+asdf_plugins: []
