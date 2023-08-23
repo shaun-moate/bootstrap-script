@@ -13,8 +13,16 @@
     # fonts
     fonts_persist:
      - name: JetBrains Mono Nerd Font
-       cask: homebrew/cask-fonts
-       src: font-jetbrains-mono-nerd-font
+       tap: homebrew/cask-fonts
+       cask: font-jetbrains-mono-nerd-font
+
+    # applications
+    apps_persist:
+     - cask: alfred
+     - cask: chromium
+     # - cask: arc-browser
+     - cask: spotify
+     - cask: whatsapp
 
     # dock
     dockitems_reset: true
@@ -49,8 +57,8 @@
     - sqlite
 
     # Editors
-    - neovim
     - emacs
+    - neovim
 
     # Languages
     - assembly
@@ -60,12 +68,7 @@
     # TODO add lua support
     # TODO add typescript/node support
 
-    # Utilities
-    # - role: arc-browser " requires at least Monterey OS
-    - alfred
-    - chromium
-    - spotify
-    - whatsapp
+    - apps
     - dock
 
     # Clean-up

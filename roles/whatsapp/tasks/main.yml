@@ -1,6 +1,0 @@
----
-- name: install whatsapp via homebrew
-  homebrew_cask:
-    name: "whatsapp"
-    update_homebrew: yes
-  tags: [ phoenix, work ]

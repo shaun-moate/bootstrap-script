@@ -1,11 +1,11 @@
 ---
-- name: "tap {{ item.cask }}"
+- name: "ensure {{ item.tap }} tapped"
   homebrew_tap:
-    name: "{{ item.cask }}"
+    name: "{{ item.tap }}"
   tags: [ fonts ]
 
-- name: "install {{ item.name }}"
+- name: "ensure {{ item.name }} installed"
   homebrew_cask:
-    name: "{{ item.src }}"
+    name: "{{ item.cask }}"
     update_homebrew: yes
   tags: [ fonts ]

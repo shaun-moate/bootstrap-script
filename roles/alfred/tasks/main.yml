@@ -1,6 +1,0 @@
----
-- name: install alfred via homebrew
-  homebrew_cask:
-    name: "alfred"
-    update_homebrew: yes
-  tags: [ phoenix, work ]

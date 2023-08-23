@@ -1,0 +1,6 @@
+---
+- name: "ensure {{ item.cask }} installed"
+  homebrew_cask:
+    name: "{{ item.cask }}"
+    update_homebrew: yes
+  tags: [ apps ]
