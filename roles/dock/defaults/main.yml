@@ -18,3 +18,6 @@ dockutil_homebrew_cask: hpedrorodrigues/tools/dockutil
 
 # Whether to install dockutil or not
 dockutil_install: true
+
+# Whether to reset the dock entirely (remove all apps)
+dockitems_reset: false

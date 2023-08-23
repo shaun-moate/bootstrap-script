@@ -1,0 +1,15 @@
+---
+- name: "check {{ item.name }} exists"
+  stat:
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/{{ item.name }}"
+  register: ssh_key
+  tags: [ ssh ]
+
+- name: "install {{ item.name }} from vault, if doesn't exist"
+  copy:
+    src: "{{ item.name }}"
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/{{ item.name }}"
+    mode: 0600
+    owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
+  when: not ssh_key.stat.exists
+  tags: [ ssh ]

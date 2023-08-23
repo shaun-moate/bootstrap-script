@@ -1,0 +1,22 @@
+---
+- name: check .ssh DIRECTORY exists
+  stat:
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
+  register: ssh_directory
+  when: ssh_reset | bool
+  tags: [ ssh ]
+
+- name: "'rm -rf ./.ssh', if exists"
+  ansible.builtin.file:
+    path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
+    state: absent
+  when: ssh_directory.stat.exists
+  tags: [ ssh ]
+
+- name: "'mkdir ./.ssh', if does not exist"
+  file:
+    dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
+    mode: 0700
+    owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
+    state: directory
+  tags: [ ssh ]

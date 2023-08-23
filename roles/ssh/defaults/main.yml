@@ -1,0 +1,5 @@
+---
+# Whether to reset the .ssh directory entirely
+ssh_reset: false
+# ssh to install from vault
+ssh_persist: []

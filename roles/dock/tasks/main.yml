@@ -6,22 +6,22 @@
   notify:
     - clear homebrew cache
   when: dockutil_install
-  tags: [ phoenix ]
+  tags: [ dock ]
 
 - name: remove all dock items
   ansible.builtin.include_tasks: dock-reset.yml
   when: "{{ dockitems_reset }}"
-  tags: [ phoenix ]
+  tags: [ dock ]
 
 - name: remove configured dock items
   ansible.builtin.include_tasks: dock-remove.yml
   loop: "{{ dockitems_remove }}"
-  tags: [ phoenix ]
+  tags: [ dock ]
 
 - name: ensure required dock items exist
   ansible.builtin.include_tasks: dock-add.yml
   loop: "{{ dockitems_persist }}"
-  tags: [ phoenix ]
+  tags: [ dock ]
 
 - name: ensure dock items are in correct position
   ansible.builtin.include_tasks: dock-position.yml
@@ -29,4 +29,4 @@
     - item.pos is defined
     - item.pos > 0
   loop: "{{ dockitems_persist }}"
-  tags: [ phoenix ]
+  tags: [ dock ]
