@@ -53,6 +53,7 @@
     apps_persist:
      - cask: alfred
      - cask: arc
+     - cask: shadow
      - cask: spotify
      - cask: whatsapp
 
@@ -65,12 +66,15 @@
      - name: Arc
        path: /Applications/Arc.app
        pos: 2
+     - name: Shadow
+       path: /Applications/Shadow\ PC.app
+       pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
-       pos: 3
+       pos: 4
      - name: Spotify
        path: /Applications/Spotify.app
-       pos: 4
+       pos: 5
        # TODO add capability to add a line spacer
 
     # post-install
