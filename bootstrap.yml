@@ -53,6 +53,7 @@
     apps_persist:
      - cask: alfred
      - cask: arc
+     - cask: google-drive
      - cask: shadow
      - cask: spotify
      - cask: whatsapp
