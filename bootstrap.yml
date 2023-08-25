@@ -97,6 +97,9 @@
       - name: ml-bootstrap-example
         git: git@github.com:shaun-moate/ml-bootstrap-example.git
         path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Code/ml-bootstrap-example"
+      - name: online-resume
+        git: git@github.com:shaun-moate/online-resume.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Code/online-resume"
     dotfiles_install: true
     doom_sync: true
 
