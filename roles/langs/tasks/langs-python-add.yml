@@ -1,0 +1,12 @@
+---
+- name: "check if python {{ item.version }} already installed"
+  ansible.builtin.command: "asdf list python {{ item.version }}"
+  register: version_installed
+  no_log: yes
+  ignore_errors: yes
+  tags: [ langs ]
+
+- name: "ensure python {{ item.version }} plugin is installed"
+  ansible.builtin.command: "env PYTHON_CONFIGURE_OPTS='--enable-shared' asdf install python {{ item.version }}"
+  when: version_installed.rc > 0
+  tags: [ langs ]

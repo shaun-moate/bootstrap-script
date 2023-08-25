@@ -7,12 +7,21 @@
 
 # tasks to install asdf plugins
 - name: install asdf plugins
-  ansible.builtin.include_tasks: asdf-plugins-add.yml
-  loop: "{{ asdf_plugins }}"
+  ansible.builtin.include_tasks: langs-asdf-plugins-add.yml
+  loop: "{{ langs_asdf_plugins }}"
+  when: langs_asdf_plugins | length > 0
   tags: [ langs ]
 
 # tasks to install python versions (via asdf)
-- name: install asdf plugins
-  ansible.builtin.include_tasks: python-versions-add.yml
-  loop: "{{ python_versions }}"
+- name: install python versions
+  ansible.builtin.include_tasks: langs-python-add.yml
+  loop: "{{ langs_asdf_python }}"
+  when: langs_asdf_python | length > 0
+  tags: [ langs ]
+
+# tasks to install nodejs versions (via asdf)
+- name: install nodejs versions
+  ansible.builtin.include_tasks: langs-nodejs-add.yml
+  loop: "{{ langs_asdf_nodejs }}"
+  when: langs_asdf_nodejs | length > 0
   tags: [ langs ]

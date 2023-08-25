@@ -1,0 +1,10 @@
+---
+- name: "check if {{ item.name }} plugin already installed"
+  ansible.builtin.command: "asdf plugin list"
+  register: plugin_installed
+  tags: [ langs ]
+
+- name: "ensure {{ item.name }} plugin is installed"
+  ansible.builtin.command: "asdf plugin-add {{ item.name }} {{ item.repository | default() }} "
+  when: "'{{ item.name }}' not in plugin_installed.stdout"
+  tags: [ langs ]

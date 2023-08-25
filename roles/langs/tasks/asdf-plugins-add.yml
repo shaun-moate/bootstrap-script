@@ -1,4 +1,0 @@
----
-- name: "ensure {{ item.name }} plugin is installed"
-  ansible.builtin.command: "asdf plugin-add {{ item.name }}"
-  tags: [ langs ]

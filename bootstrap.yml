@@ -15,26 +15,34 @@
     # utilities
     utils_persist:
       - name: asdf
-      - name: ripgrep
-      - name: poetry
-      - name: tox
+      - name: coreutils
+      - name: curl
+      - name: git
+      - name: gpg
       - name: openssl
+      - name: poetry
       - name: readline
+      - name: ripgrep
       - name: sqlite3
+      - name: tcl-tk
+      - name: tox
       - name: xz
       - name: zlib
-      - name: tcl-tk
 
     # languages
     langs_persist:
       - name: nasm
       - name: cmake
-    asdf_plugins:
+    langs_asdf_plugins:
       - name: python
-    python_versions:
+      - name: nodejs
+        repository: https://github.com/asdf-vm/asdf-nodejs.git
+    langs_asdf_python:
       - version: 3.8.10
       - version: 3.9.1
-      - version: latest
+      - version: 3.11.5
+    langs_asdf_nodejs:
+      - version: 20.5.1
 
     # fonts
     fonts_persist:
@@ -86,9 +94,6 @@
       - name: Work-Notes
         git: git@github.com:shaun-moate/work-notes.git
         path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Work"
-      - name: Zettelkasten
-        git: git@github.com:shaun-moate/zettelkasten.git
-        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Zettelkasten"
       - name: ml-bootstrap-example
         git: git@github.com:shaun-moate/ml-bootstrap-example.git
         path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Code/ml-bootstrap-example"
@@ -107,6 +112,6 @@
     - term
     - editors
     - apps
-    # TODO look at VMWare, Shadow, more?
+    # TODO look at VMWare, more?
     - dock
     - post-install
