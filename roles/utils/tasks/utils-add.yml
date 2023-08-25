@@ -1,6 +1,14 @@
 ---
-- name: "ensure {{ item.name }} is install"
+- name: "check {{ item.name }} is installed"
+  ansible.builtin.command: "brew list --formulae {{ item.name }}"
+  register: util_installed
+  no_log: yes
+  ignore_errors: yes
+  tags: [ utils ]
+
+- name: "if not installed, then install {{ item.name }}"
   homebrew:
     name: "{{ item.name }}"
     update_homebrew: yes
+  when: "'{{ item.name }}' not in util_installed.stdout"
   tags: [ utils ]

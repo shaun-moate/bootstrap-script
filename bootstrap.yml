@@ -17,12 +17,18 @@
       - name: asdf
       - name: coreutils
       - name: curl
+      - name: isort
       - name: git
       - name: gpg
+      - name: graphviz
+      - name: grep
+      - name: markdown
       - name: openssl
+      - name: pipenv
       - name: poetry
       - name: readline
       - name: ripgrep
+      - name: shellcheck
       - name: sqlite3
       - name: tcl-tk
       - name: tox
@@ -38,8 +44,6 @@
       - name: nodejs
         repository: https://github.com/asdf-vm/asdf-nodejs.git
     langs_asdf_python:
-      - version: 3.8.10
-      - version: 3.9.1
       - version: 3.11.5
     langs_asdf_nodejs:
       - version: 20.5.1
