@@ -6,7 +6,7 @@
   vars:
     hostname: phoenix
 
-    # pre-install
+    # ssh
     ssh_reset: true
     ssh_persist:
      - name: id_ed25519
@@ -108,7 +108,7 @@
     doom_sync: true
 
   roles:
-    - pre-install
+    - ssh
     - utils
     # TODO add cli support (ie. aws-cli)
     # TODO add tmux support
