@@ -4,14 +4,14 @@
     path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
   register: ssh_directory
   when: ssh_reset | bool
-  tags: [ pre-install ]
+  tags: [ ssh ]
 
 - name: "'rm -rf ./.ssh', if exists"
   ansible.builtin.file:
     path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh"
     state: absent
   when: ssh_directory.stat.exists
-  tags: [ pre-install ]
+  tags: [ ssh ]
 
 - name: "'mkdir ./.ssh', if does not exist"
   file:
@@ -19,4 +19,4 @@
     mode: 0700
     owner: "{{ lookup('ansible.builtin.env', 'USER') }}"
     state: directory
-  tags: [ pre-install ]
+  tags: [ ssh ]

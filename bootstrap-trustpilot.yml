@@ -1,0 +1,111 @@
+---
+- name: bootstrap-script
+  hosts: localhost
+  connection: local
+
+  vars:
+    # ssh
+    ssh_reset: true
+    ssh_persist:
+     - name: id_ed25519
+     - name: id_ed25519.pub
+
+    # utilities
+    utils_persist:
+      - name: asdf
+      - name: coreutils
+      - name: curl
+      - name: isort
+      - name: git
+      - name: gpg
+      - name: graphviz
+      - name: grep
+      - name: markdown
+      - name: openssl
+      - name: pipenv
+      - name: poetry
+      - name: readline
+      - name: ripgrep
+      - name: shellcheck
+      - name: sqlite3
+      - name: tcl-tk
+      - name: tox
+      - name: xz
+      - name: zlib
+
+    # languages
+    langs_persist:
+      - name: cmake
+    langs_asdf_plugins:
+      - name: python
+    langs_asdf_python:
+      - version: 3.11.5
+
+    # fonts
+    fonts_persist:
+     - name: JetBrains Mono Nerd Font
+       tap: homebrew/cask-fonts
+       cask: font-jetbrains-mono-nerd-font
+
+    # terminal
+    oh_my_zsh_install: true
+
+    # editors
+    doom_emacs_install: true
+    neovim_install: true
+
+    # applications
+    apps_persist:
+     - cask: alfred
+     - cask: arc
+     - cask: slack
+     - cask: google-drive
+     - cask: spotify
+     - cask: whatsapp
+
+    # dock
+    dockitems_reset: true
+    dockitems_persist:
+     - name: Emacs
+       path: /Applications/Emacs.app
+       pos: 1
+     - name: Arc
+       path: /Applications/Arc.app
+       pos: 2
+     - name: Slack
+       path: /Applications/Slack.app
+       pos: 3
+     - name: WhatsApp
+       path: /Applications/WhatsApp.app
+       pos: 4
+     - name: Spotify
+       path: /Applications/Spotify.app
+       pos: 5
+       # TODO add capability to add a line spacer
+
+    # post-install
+    repos_persist:
+      - name: Notes
+        git: git@github.com:shaun-moate/notes.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Notes"
+      - name: Work-Notes
+        git: git@github.com:shaun-moate/work-notes.git
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Work"
+    dotfiles_install: true
+    doom_sync: true
+
+  roles:
+    - ssh
+    - utils
+    # TODO add cli support (ie. aws-cli)
+    # TODO add tmux support
+    - langs
+    # TODO add lua support
+    # TODO add typescript/node support
+    - fonts
+    - term
+    - editors
+    - apps
+    # TODO look at VMWare, more?
+    - dock
+    - post-install

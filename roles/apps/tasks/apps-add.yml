@@ -1,6 +1,15 @@
 ---
+- name: "check {{ item.cask }} is installed"
+  ansible.builtin.command: mdfind "find /Applications -name {{ item.cask }}.app"
+  register: app_installed
+  no_log: yes
+  ignore_errors: yes
+  tags: [ apps ]
+
 - name: "ensure {{ item.cask }} installed"
   homebrew_cask:
     name: "{{ item.cask }}"
     update_homebrew: yes
+  when: "app_installed.rc > 0"
+  ignore_errors: yes
   tags: [ apps ]

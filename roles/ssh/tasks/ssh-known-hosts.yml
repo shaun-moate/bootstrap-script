@@ -2,11 +2,11 @@
 - name: register ssh-keyscan contents
   ansible.builtin.command: "ssh-keyscan -H github.com"
   register: ssh_keyscan
-  tags: [ pre-install ]
+  tags: [ ssh ]
 
 - name: "add github.com (140.82.121.4) to known_hosts"
   ansible.builtin.lineinfile:
     path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.ssh/known_hosts"
     line: "{{ ssh_keyscan.stdout }}"
     create: yes
-  tags: [ pre-install ]
+  tags: [ ssh ]

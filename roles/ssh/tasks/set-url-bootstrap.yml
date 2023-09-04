@@ -1,4 +1,4 @@
 ---
 - name: set-url for bootstrap-scripts repo
   ansible.builtin.command: "git remote set-url origin git@github.com:shaun-moate/bootstrap-script.git"
-  tags: [ pre-install ]
+  tags: [ ssh ]
