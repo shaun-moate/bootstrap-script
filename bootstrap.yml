@@ -65,7 +65,9 @@
     apps_persist:
      - cask: alfred
      - cask: arc
+     - cask: kindle
      - cask: google-drive
+     - cask: nordvpn
      - cask: shadow
      - cask: spotify
      - cask: whatsapp
@@ -79,8 +81,8 @@
      - name: Arc
        path: /Applications/Arc.app
        pos: 2
-     - name: Shadow
-       path: /Applications/Shadow\ PC.app
+     - name: Kindle
+       path: /Applications/Kindle.app
        pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
