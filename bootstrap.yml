@@ -9,8 +9,8 @@
     # ssh
     ssh_reset: true
     ssh_persist:
-     - name: id_ed25519
-     - name: id_ed25519.pub
+     - name: personal
+     - name: personal.pub
 
     # utilities
     utils_persist:

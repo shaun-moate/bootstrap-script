@@ -7,8 +7,10 @@
     # ssh
     ssh_reset: true
     ssh_persist:
-     - name: id_ed25519
-     - name: id_ed25519.pub
+     - name: personal
+     - name: personal.pub
+     - name: trustpilot
+     - name: trustpilot.pub
 
     # utilities
     utils_persist:
@@ -58,9 +60,12 @@
     apps_persist:
      - cask: alfred
      - cask: arc
-     - cask: slack
+     - cask: docker
+     - cask: google-cloud-sdk
      - cask: google-drive
+     - cask: slack
      - cask: spotify
+     - cask: visual-studio-code
      - cask: whatsapp
 
     # dock
@@ -69,18 +74,21 @@
      - name: Emacs
        path: /Applications/Emacs.app
        pos: 1
+     - name: VSCode
+       path: /Applications/Visual\ Studio\ Code.app
+       pos: 2
      - name: Arc
        path: /Applications/Arc.app
-       pos: 2
+       pos: 3
      - name: Slack
        path: /Applications/Slack.app
-       pos: 3
+       pos: 4
      - name: WhatsApp
        path: /Applications/WhatsApp.app
-       pos: 4
+       pos: 5
      - name: Spotify
        path: /Applications/Spotify.app
-       pos: 5
+       pos: 6
        # TODO add capability to add a line spacer
 
     # post-install
