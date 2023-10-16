@@ -65,8 +65,9 @@
     apps_persist:
      - cask: alfred
      - cask: arc
-     - cask: kindle
+     - cask: docker
      - cask: google-drive
+     - cask: kindle
      - cask: nordvpn
      - cask: shadow
      - cask: spotify
@@ -81,8 +82,8 @@
      - name: Arc
        path: /Applications/Arc.app
        pos: 2
-     - name: Kindle
-       path: /Applications/Kindle.app
+     - name: Docker
+       path: /Applications/Docker.app
        pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
