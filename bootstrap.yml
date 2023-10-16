@@ -22,6 +22,7 @@
       - name: gpg
       - name: graphviz
       - name: grep
+      - name: hatch
       - name: markdown
       - name: openssl
       - name: pipenv
