@@ -18,6 +18,7 @@
       - name: coreutils
       - name: curl
       - name: isort
+      - name: fzf
       - name: git
       - name: gpg
       - name: graphviz
@@ -32,6 +33,7 @@
       - name: shellcheck
       - name: sqlite3
       - name: tcl-tk
+      - name: tmux
       - name: tox
       - name: xz
       - name: zlib
@@ -45,12 +47,22 @@
       - name: nodejs
         repository: https://github.com/asdf-vm/asdf-nodejs.git
     langs_asdf_python:
+      - version: 3.8.12
       - version: 3.11.5
     langs_asdf_nodejs:
       - version: 20.5.1
 
     # fonts
     fonts_persist:
+     - name: Powerline Symbols
+       tap: homebrew/cask-fonts
+       cask: font-powerline-symbols
+     - name: Powerline for Meslo
+       tap: homebrew/cask-fonts
+       cask: font-meslo-for-powerline
+     - name: Powerline for Source Code Pro
+       tap: homebrew/cask-fonts
+       cask: font-source-code-pro-for-powerline
      - name: JetBrains Mono Nerd Font
        tap: homebrew/cask-fonts
        cask: font-jetbrains-mono-nerd-font
@@ -66,10 +78,11 @@
     apps_persist:
      - cask: alfred
      - cask: arc
-     - cask: docker
      - cask: google-drive
+     - cask: iterm2
      - cask: kindle
      - cask: nordvpn
+     - cask: rancher
      - cask: shadow
      - cask: spotify
      - cask: whatsapp
@@ -77,14 +90,14 @@
     # dock
     dockitems_reset: true
     dockitems_persist:
-     - name: Emacs
-       path: /Applications/Emacs.app
+     - name: iTerm
+       path: /Applications/iTerm.app
        pos: 1
      - name: Arc
        path: /Applications/Arc.app
        pos: 2
-     - name: Docker
-       path: /Applications/Docker.app
+     - name: Rancher
+       path: /Applications/Rancher\ Desktop.app
        pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
