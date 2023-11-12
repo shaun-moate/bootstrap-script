@@ -25,6 +25,7 @@
       - name: grep
       - name: hatch
       - name: markdown
+      - name: mysql
       - name: openssl
       - name: pipenv
       - name: poetry
@@ -78,11 +79,12 @@
     apps_persist:
      - cask: alfred
      - cask: arc
+     - cask: docker
+     - cask: google-cloud-sdk
      - cask: google-drive
      - cask: iterm2
      - cask: kindle
      - cask: nordvpn
-     - cask: rancher
      - cask: shadow
      - cask: spotify
      - cask: whatsapp
@@ -96,8 +98,8 @@
      - name: Arc
        path: /Applications/Arc.app
        pos: 2
-     - name: Rancher
-       path: /Applications/Rancher\ Desktop.app
+     - name: Docker
+       path: /Applications/Docker.app
        pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
@@ -109,10 +111,15 @@
 
     # post-install
     repos_persist:
-      - name: Notes
+      # install tmux tpm
+      - name: tmux tpm
+        git: https://github.com/tmux-plugins/tpm
+        path: "{{ lookup('ansible.builtin.env', 'HOME') }}/.tmux/plugins/tpm"
+      # install personal repos
+      - name: notes
         git: git@github.com:shaun-moate/notes.git
         path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Notes"
-      - name: Work-Notes
+      - name: work-notes
         git: git@github.com:shaun-moate/work-notes.git
         path: "{{ lookup('ansible.builtin.env', 'HOME') }}/Work"
       - name: ml-bootstrap-example
@@ -128,7 +135,6 @@
     - ssh
     - utils
     # TODO add cli support (ie. aws-cli)
-    # TODO add tmux support
     - langs
     # TODO add lua support
     # TODO add typescript/node support
@@ -136,6 +142,5 @@
     - term
     - editors
     - apps
-    # TODO look at VMWare, more?
     - dock
     - post-install

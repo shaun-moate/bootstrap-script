@@ -9,7 +9,7 @@
   when: "{{ dotfiles_install }}"
   tags: [ post-install ]
 
-- name: run 'doom sync' to ensure doom config installed
-  ansible.builtin.include_tasks: doom-sync.yml
-  when: "{{ doom_sync }}"
-  tags: [ post-install ]
+# - name: run 'doom sync' to ensure doom config installed
+#   ansible.builtin.include_tasks: doom-sync.yml
+#   when: "{{ doom_sync }}"
+#   tags: [ post-install ]
