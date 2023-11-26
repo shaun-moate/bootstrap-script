@@ -25,10 +25,3 @@
   loop: "{{ langs_asdf_nodejs }}"
   when: langs_asdf_nodejs | length > 0
   tags: [ langs ]
-
-# tasks to install golang versions (via asdf)
-- name: install golang versions
-  ansible.builtin.include_tasks: langs-golang-add.yml
-  loop: "{{ langs_asdf_golang }}"
-  when: langs_asdf_golang | length > 0
-  tags: [ langs ]

@@ -10,3 +10,11 @@
   ansible.builtin.command: "asdf install nodejs {{ item.version }}"
   when: version_installed.rc > 0
   tags: [ langs ]
+
+- name: "enable corepack yarn"
+  ansible.builtin.command: "corepack enable"
+  tags: [ langs ]
+
+- name: "reshim nodejs"
+  ansible.builtin.command: "asdf reshim nodejs"
+  tags: [ langs ]
