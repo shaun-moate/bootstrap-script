@@ -15,6 +15,7 @@
     # utilities
     utils_persist:
       - name: asdf
+      - name: caarlos0/tap/timer # timer for pomo script
       - name: coreutils
       - name: curl
       - name: isort
