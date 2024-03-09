@@ -68,6 +68,9 @@
      - name: JetBrains Mono Nerd Font
        tap: homebrew/cask-fonts
        cask: font-jetbrains-mono-nerd-font
+     - name: Meslo Nerd Font
+       tap: homebrew/cask-fonts
+       cask: font-meslo-lg-nerd-font
 
     # terminal
     oh_my_zsh_install: true
