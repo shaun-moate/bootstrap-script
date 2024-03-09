@@ -78,7 +78,7 @@
 
     # applications
     apps_persist:
-     - cask: alacritty
+     # - cask: alacritty
      - cask: alfred
      - cask: arc
      - cask: docker
@@ -87,13 +87,14 @@
      - cask: kindle
      - cask: nordvpn
      - cask: spotify
+     - cask: wezterm
      - cask: whatsapp
 
     # dock
     dockitems_reset: true
     dockitems_persist:
-     - name: iTerm
-       path: /Applications/iTerm.app
+     - name: WezTerm
+       path: /Applications/WezTerm.app
        pos: 1
      - name: Arc
        path: /Applications/Arc.app
