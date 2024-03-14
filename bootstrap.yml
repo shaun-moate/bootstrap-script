@@ -16,6 +16,7 @@
     utils_persist:
       - name: asdf
       - name: caarlos0/tap/timer # timer for pomo script
+      - name: colima
       - name: coreutils
       - name: curl
       - name: isort
@@ -39,6 +40,7 @@
       - name: tox
       - name: xz
       - name: zlib
+      - name: zoxide
 
     # languages
     langs_persist:
@@ -84,7 +86,6 @@
      # - cask: alacritty
      - cask: alfred
      - cask: arc
-     - cask: docker
      - cask: google-cloud-sdk
      - cask: google-drive
      - cask: kindle
@@ -102,15 +103,12 @@
      - name: Arc
        path: /Applications/Arc.app
        pos: 2
-     - name: Docker
-       path: /Applications/Docker.app
-       pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
-       pos: 4
+       pos: 3
      - name: Spotify
        path: /Applications/Spotify.app
-       pos: 5
+       pos: 4
        # TODO add capability to add a line spacer
 
     # post-install
