@@ -47,14 +47,30 @@
       - name: nasm
       - name: cmake
     langs_asdf_plugins:
-      - name: python
+      - name: golang
+        repository: https://github.com/asdf-community/asdf-golang.git
+      - name: java
+        repository: https://github.com/halcyon/asdf-java.git
       - name: nodejs
         repository: https://github.com/asdf-vm/asdf-nodejs.git
+      - name: python
+      - name: scala
+        repository: https://github.com/asdf-community/asdf-scala
+      - name: sbt
+        repository: https://github.com/lerencao/asdf-sbt
+    langs_asdf_java:
+      - version: adoptopenjdk-11.0.16+8
+    langs_asdf_nodejs:
+      - version: 20.5.1
     langs_asdf_python:
       - version: 3.8.12
       - version: 3.11.5
-    langs_asdf_nodejs:
-      - version: 20.5.1
+    langs_asdf_golang:
+      - version: 1.21.0
+    langs_asdf_scala:
+      - version: 3.4.1
+    langs_asdf_sbt:
+      - version: 1.9.9
 
     # fonts
     fonts_persist:

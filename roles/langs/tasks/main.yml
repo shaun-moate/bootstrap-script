@@ -12,11 +12,18 @@
   when: langs_asdf_plugins | length > 0
   tags: [ langs ]
 
-# tasks to install python versions (via asdf)
-- name: install python versions
-  ansible.builtin.include_tasks: langs-python-add.yml
-  loop: "{{ langs_asdf_python }}"
-  when: langs_asdf_python | length > 0
+# tasks to install golang versions (via asdf)
+- name: install golang versions
+  ansible.builtin.include_tasks: langs-golang-add.yml
+  loop: "{{ langs_asdf_golang }}"
+  when: langs_asdf_golang | length > 0
+  tags: [ langs ]
+
+# tasks to install java versions (via asdf)
+- name: install java versions
+  ansible.builtin.include_tasks: langs-java-add.yml
+  loop: "{{ langs_asdf_java }}"
+  when: langs_asdf_java | length > 0
   tags: [ langs ]
 
 # tasks to install nodejs versions (via asdf)
@@ -24,4 +31,25 @@
   ansible.builtin.include_tasks: langs-nodejs-add.yml
   loop: "{{ langs_asdf_nodejs }}"
   when: langs_asdf_nodejs | length > 0
+  tags: [ langs ]
+
+# tasks to install python versions (via asdf)
+- name: install python versions
+  ansible.builtin.include_tasks: langs-python-add.yml
+  loop: "{{ langs_asdf_python }}"
+  when: langs_asdf_python | length > 0
+  tags: [ langs ]
+
+# tasks to install scala versions (via asdf)
+- name: install scala versions
+  ansible.builtin.include_tasks: langs-scala-add.yml
+  loop: "{{ langs_asdf_scala }}"
+  when: langs_asdf_scala | length > 0
+  tags: [ langs ]
+
+# tasks to install sbt versions (via asdf)
+- name: install sbt versions
+  ansible.builtin.include_tasks: langs-sbt-add.yml
+  loop: "{{ langs_asdf_sbt }}"
+  when: langs_asdf_sbt | length > 0
   tags: [ langs ]

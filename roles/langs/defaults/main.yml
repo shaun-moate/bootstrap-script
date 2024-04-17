@@ -9,3 +9,9 @@ langs_asdf_python: []
 langs_asdf_nodejs: []
 # asdf golang versions to be installed by default
 langs_asdf_golang: []
+# asdf scala versions to be installed by default
+langs_asdf_scala: []
+# asdf sbt versions to be installed by default
+langs_asdf_sbt: []
+# asdf java versions to be installed by default
+langs_asdf_java: []

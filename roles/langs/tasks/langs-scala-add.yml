@@ -1,0 +1,12 @@
+---
+- name: "check if scala {{ item.version }} already installed"
+  ansible.builtin.command: "asdf list scala {{ item.version }}"
+  register: version_installed
+  no_log: yes
+  ignore_errors: yes
+  tags: [ langs ]
+
+- name: "ensure scala {{ item.version }} plugin is installed"
+  ansible.builtin.command: "asdf install scala {{ item.version }}"
+  when: version_installed.rc > 0
+  tags: [ langs ]

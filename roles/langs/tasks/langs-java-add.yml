@@ -1,0 +1,12 @@
+---
+- name: "check if java {{ item.version }} already installed"
+  ansible.builtin.command: "asdf list java {{ item.version }}"
+  register: version_installed
+  no_log: yes
+  ignore_errors: yes
+  tags: [ langs ]
+
+- name: "ensure java {{ item.version }} plugin is installed"
+  ansible.builtin.command: "asdf install java {{ item.version }}"
+  when: version_installed.rc > 0
+  tags: [ langs ]
