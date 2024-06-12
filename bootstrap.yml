@@ -105,6 +105,7 @@
      - cask: google-cloud-sdk
      - cask: google-drive
      - cask: kindle
+     - cask: obsidian
      - cask: nordvpn
      - cask: spotify
      - cask: wezterm
@@ -125,7 +126,9 @@
      - name: Spotify
        path: /Applications/Spotify.app
        pos: 4
-       # TODO add capability to add a line spacer
+     - name: Obsidian
+       path: /Applications/Obsidian.app
+       pos: 4
 
     # post-install
     repos_persist:
