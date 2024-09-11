@@ -107,6 +107,7 @@
      - cask: kindle
      - cask: obsidian
      - cask: nordvpn
+     - cask: postman
      - cask: spotify
      - cask: wezterm
      - cask: whatsapp
