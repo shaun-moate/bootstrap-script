@@ -106,6 +106,7 @@
      - cask: google-drive
      - cask: kindle
      - cask: obsidian
+     - cask: mysqlworkbench
      - cask: nordvpn
      - cask: spotify
      - cask: wezterm
@@ -117,18 +118,21 @@
      - name: WezTerm
        path: /Applications/WezTerm.app
        pos: 1
+     - name: MySQLWorkbench
+       path: /Applications/MySQLWorkbench.app
+       pos: 2
      - name: Arc
        path: /Applications/Arc.app
-       pos: 2
+       pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
-       pos: 3
+       pos: 4
      - name: Spotify
        path: /Applications/Spotify.app
-       pos: 4
+       pos: 5
      - name: Obsidian
        path: /Applications/Obsidian.app
-       pos: 4
+       pos: 6
 
     # post-install
     repos_persist:
