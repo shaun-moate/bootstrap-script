@@ -102,10 +102,12 @@
      # - cask: alacritty
      - cask: alfred
      - cask: arc
+     - cask: docker
      - cask: google-cloud-sdk
      - cask: google-drive
      - cask: kindle
      - cask: obsidian
+     - cask: mysqlworkbench
      - cask: nordvpn
      - cask: postman
      - cask: spotify
