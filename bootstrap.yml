@@ -21,6 +21,7 @@
       - name: curl
       - name: isort
       - name: eza
+      - name: fd
       - name: fzf
       - name: git
       - name: gpg
