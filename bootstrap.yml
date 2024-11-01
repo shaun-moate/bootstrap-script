@@ -15,11 +15,12 @@
     # utilities
     utils_persist:
       - name: asdf
-      - name: caarlos0/tap/timer # timer for pomo script
+      - name: bat
       - name: colima
       - name: coreutils
       - name: curl
       - name: isort
+      - name: eza
       - name: fzf
       - name: git
       - name: gpg
@@ -36,6 +37,8 @@
       - name: shellcheck
       - name: sqlite3
       - name: tcl-tk
+      - name: thefuck
+      - name: tldr
       - name: tmux
       - name: tox
       - name: xz
@@ -120,18 +123,21 @@
      - name: WezTerm
        path: /Applications/WezTerm.app
        pos: 1
+     - name: Docker
+       path: /Applications/Docker.app
+       pos: 2
      - name: Arc
        path: /Applications/Arc.app
-       pos: 2
+       pos: 3
      - name: WhatsApp
        path: /Applications/WhatsApp.app
-       pos: 3
+       pos: 4
      - name: Spotify
        path: /Applications/Spotify.app
-       pos: 4
+       pos: 5
      - name: Obsidian
        path: /Applications/Obsidian.app
-       pos: 5
+       pos: 6
 
     # post-install
     repos_persist:
