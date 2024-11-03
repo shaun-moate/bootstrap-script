@@ -1,0 +1,4 @@
+---
+- name: install nix-cli
+  ansible.builtin.include_tasks: install-nix-cli.yml
+  tags: [ nix ]

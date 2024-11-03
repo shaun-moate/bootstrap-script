@@ -1,0 +1,8 @@
+---
+- name: install determinate nix-cli
+  shell: curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
+  tags: [ nix ]
+
+- name: start nix daemon
+  shell: . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  tags: [ nix ]

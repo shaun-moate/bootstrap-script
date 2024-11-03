@@ -104,6 +104,7 @@
     # applications
     apps_persist:
      # - cask: alacritty
+     - cask: nikitabobko/tap/aerospace
      - cask: alfred
      - cask: arc
      - cask: docker
@@ -117,28 +118,6 @@
      - cask: spotify
      - cask: wezterm
      - cask: whatsapp
-
-    # dock
-    dockitems_reset: true
-    dockitems_persist:
-     - name: WezTerm
-       path: /Applications/WezTerm.app
-       pos: 1
-     - name: Docker
-       path: /Applications/Docker.app
-       pos: 2
-     - name: Arc
-       path: /Applications/Arc.app
-       pos: 3
-     - name: WhatsApp
-       path: /Applications/WhatsApp.app
-       pos: 4
-     - name: Spotify
-       path: /Applications/Spotify.app
-       pos: 5
-     - name: Obsidian
-       path: /Applications/Obsidian.app
-       pos: 6
 
     # post-install
     repos_persist:
@@ -164,14 +143,11 @@
 
   roles:
     - ssh
+    - nix
     - utils
-    # TODO add cli support (ie. aws-cli)
     - langs
-    # TODO add lua support
-    # TODO add typescript/node support
     - fonts
     - term
     - editors
     - apps
-    - dock
     - post-install
