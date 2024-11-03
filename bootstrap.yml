@@ -95,10 +95,10 @@
        cask: font-meslo-lg-nerd-font
 
     # terminal
-    oh_my_zsh_install: true
+    # oh_my_zsh_install: false
 
     # editors
-    doom_emacs_install: true
+    # doom_emacs_install: false
     neovim_install: true
 
     # applications
