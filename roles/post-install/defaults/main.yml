@@ -3,5 +3,3 @@
 dotfiles_install: true
 # designate what repos to install by default
 repos_persist: []
-# signal if you want 'doom sync' to be run
-doom_sync: false

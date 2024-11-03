@@ -1,6 +1,0 @@
----
-# tasks to install utils
-- name: install utils
-  ansible.builtin.include_tasks: utils-add.yml
-  loop: "{{ utils_persist }}"
-  tags: [ utils ]

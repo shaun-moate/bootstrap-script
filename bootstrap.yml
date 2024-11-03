@@ -12,40 +12,6 @@
      - name: personal
      - name: personal.pub
 
-    # utilities
-    # utils_persist:
-    #   - name: asdf
-    #   - name: bat
-    #   - name: colima
-    #   - name: coreutils
-    #   - name: curl
-    #   - name: isort
-    #   - name: eza
-    #   - name: fd
-    #   - name: fzf
-    #   - name: git
-    #   - name: gpg
-    #   - name: graphviz
-    #   - name: grep
-    #   - name: hatch
-    #   - name: markdown
-    #   - name: mysql
-    #   - name: openssl
-    #   - name: pipenv
-    #   - name: poetry
-    #   - name: readline
-    #   - name: ripgrep
-    #   - name: shellcheck
-    #   - name: sqlite3
-    #   - name: tcl-tk
-    #   - name: thefuck
-    #   - name: tldr
-    #   - name: tmux
-    #   - name: tox
-    #   - name: xz
-    #   - name: zlib
-    #   - name: zoxide
-
     # languages
     langs_persist:
       - name: nasm
@@ -94,30 +60,8 @@
        tap: homebrew/cask-fonts
        cask: font-meslo-lg-nerd-font
 
-    # terminal
-    # oh_my_zsh_install: false
-
     # editors
-    # doom_emacs_install: false
-    neovim_install: true
-
-    # applications
-    # apps_persist:
-    #  # - cask: alacritty
-    #  - cask: nikitabobko/tap/aerospace
-    #  - cask: alfred
-    #  - cask: arc
-    #  - cask: docker
-    #  - cask: google-cloud-sdk
-    #  - cask: google-drive
-    #  - cask: kindle
-    #  - cask: obsidian
-    #  - cask: mysqlworkbench
-    #  - cask: nordvpn
-    #  - cask: postman
-    #  - cask: spotify
-    #  - cask: wezterm
-    #  - cask: whatsapp
+    neovim_install: false
 
     # post-install
     repos_persist:
@@ -144,10 +88,8 @@
   roles:
     - ssh
     - nix
-    # - utils
     - langs
     - fonts
     - term
     - editors
-    # - apps
     - post-install

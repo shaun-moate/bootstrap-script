@@ -1,9 +1,4 @@
 ---
-- name: ensure doom-emacs is installed
-  ansible.builtin.include_tasks: doom-emacs-install.yml
-  when: "{{ doom_emacs_install }}"
-  tags: [ editors ]
-
 - name: ensure neovim is installed
   ansible.builtin.include_tasks: neovim-install.yml
   when: "{{ neovim_install }}"

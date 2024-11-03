@@ -1,6 +1,0 @@
----
-# tasks to install applications
-- name: install apps
-  ansible.builtin.include_tasks: apps-add.yml
-  loop: "{{ apps_persist }}"
-  tags: [ apps ]
