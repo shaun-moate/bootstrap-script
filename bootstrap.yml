@@ -42,24 +42,6 @@
     langs_asdf_sbt:
       - version: 1.9.9
 
-    # fonts
-    fonts_persist:
-     - name: Powerline Symbols
-       tap: homebrew/cask-fonts
-       cask: font-powerline-symbols
-     - name: Powerline for Meslo
-       tap: homebrew/cask-fonts
-       cask: font-meslo-for-powerline
-     - name: Powerline for Source Code Pro
-       tap: homebrew/cask-fonts
-       cask: font-source-code-pro-for-powerline
-     - name: JetBrains Mono Nerd Font
-       tap: homebrew/cask-fonts
-       cask: font-jetbrains-mono-nerd-font
-     - name: Meslo Nerd Font
-       tap: homebrew/cask-fonts
-       cask: font-meslo-lg-nerd-font
-
     # post-install
     repos_persist:
       # install tmux tpm
@@ -85,7 +67,4 @@
     - ssh
     - nix
     - langs
-    - fonts
-    - term
-    - editors
     - post-install

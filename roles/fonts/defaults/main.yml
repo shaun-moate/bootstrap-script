@@ -1,7 +1,0 @@
----
-# clear all installed fonts
-fonts_reset: false
-# casks to tap for access to fonts
-fonts_cask: []
-# fonts to install
-fonts_persist: []

@@ -1,6 +1,0 @@
----
-# tasks to install fonts
-- name: install fonts
-  ansible.builtin.include_tasks: fonts-add.yml
-  loop: "{{ fonts_persist }}"
-  tags: [ fonts ]
