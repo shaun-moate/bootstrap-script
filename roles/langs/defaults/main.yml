@@ -1,6 +1,4 @@
 ---
-# langauges to be installed by default
-langs_persist: []
 # asdf plugins to be installed by default
 langs_asdf_plugins: []
 # asdf python versions to be installed by default

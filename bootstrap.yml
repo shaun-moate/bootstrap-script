@@ -13,9 +13,6 @@
      - name: personal.pub
 
     # languages
-    langs_persist:
-      - name: nasm
-      - name: cmake
     langs_asdf_plugins:
       - name: golang
         repository: https://github.com/asdf-community/asdf-golang.git
