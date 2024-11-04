@@ -1,5 +1,0 @@
----
-- name: ensure neovim is installed
-  ansible.builtin.include_tasks: neovim-install.yml
-  when: "{{ neovim_install }}"
-  tags: [ editors ]

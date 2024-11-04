@@ -60,9 +60,6 @@
        tap: homebrew/cask-fonts
        cask: font-meslo-lg-nerd-font
 
-    # editors
-    neovim_install: false
-
     # post-install
     repos_persist:
       # install tmux tpm

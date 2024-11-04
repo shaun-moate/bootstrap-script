@@ -1,3 +1,0 @@
----
-# signal if should install doom-emacs
-neovim_install: false
